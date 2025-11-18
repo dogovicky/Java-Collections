@@ -1,6 +1,9 @@
 import collections.CollectionsDemo;
 import list.ArrayListImpl;
 import list.LinkedListImpl;
+import set.HashSetImpl;
+import set.LinkedHashSetImpl;
+import set.TreeSetImpl;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -20,11 +23,24 @@ public class Main {
 //        // Collections
 //        CollectionsDemo.show();
 
+
+       // List: ArrayList and LinkedList
         ArrayListImpl arrListImpl = new ArrayListImpl();
-        arrListImpl.list();
+        //arrListImpl.list();
 
         LinkedListImpl linkedListImpl = new LinkedListImpl();
-        linkedListImpl.listImpl();
+        //linkedListImpl.listImpl();
+
+        // Set:  HashSet, LinkedHashSet and TreeSet
+
+        HashSetImpl hashSet = new HashSetImpl();
+        hashSet.hashSetImpl();
+
+        LinkedHashSetImpl linkedHashSet = new LinkedHashSetImpl();
+        linkedHashSet.linkedHashSetImpl();
+
+        TreeSetImpl treeSet = new TreeSetImpl();
+        treeSet.treeSetImpl();
 
     }
 }
