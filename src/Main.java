@@ -1,4 +1,6 @@
 import collections.CollectionsDemo;
+import list.ArrayListImpl;
+import list.LinkedListImpl;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -6,17 +8,23 @@ public class Main {
     public static void main(String[] args) {
 
         // Iterable & Iterator interface and how they work
-        var list = new GenericList<String>();
-        list.add("a");
-        list.add("b");
-        list.add("c");
+//        var list = new GenericList<String>();
+//        list.add("a");
+//        list.add("b");
+//        list.add("c");
+//
+//        for (var item : list) {
+//            System.out.println(item);
+//        }
+//
+//        // Collections
+//        CollectionsDemo.show();
 
-        for (var item : list) {
-            System.out.println(item);
-        }
+        ArrayListImpl arrListImpl = new ArrayListImpl();
+        arrListImpl.list();
 
-        // Collections
-        CollectionsDemo.show();
+        LinkedListImpl linkedListImpl = new LinkedListImpl();
+        linkedListImpl.listImpl();
 
     }
 }
