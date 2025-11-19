@@ -4,6 +4,9 @@ import list.LinkedListImpl;
 import map.HashMapImpl;
 import map.LinkedHashMapImpl;
 import map.TreeMapImpl;
+import queue.DequeueImpl;
+import queue.LinkedListQueue;
+import queue.PriorityQueueImpl;
 import set.HashSetImpl;
 import set.LinkedHashSetImpl;
 import set.TreeSetImpl;
@@ -46,12 +49,21 @@ public class Main {
 
         // Map: HashMap, LinkedHashMap and TreeMap
         HashMapImpl hashMap = new HashMapImpl();
-        hashMap.hashMapImpl();
+//        hashMap.hashMapImpl();
 
         LinkedHashMapImpl linkedHashMap = new LinkedHashMapImpl();
-        linkedHashMap.linkedHashMapImpl();
+//        linkedHashMap.linkedHashMapImpl();
 
         TreeMapImpl treeMap = new TreeMapImpl();
-        treeMap.treeMapImpl();
+//        treeMap.treeMapImpl();
+
+        LinkedListQueue listQueue = new LinkedListQueue();
+        listQueue.linkedListQueueImpl();
+
+        DequeueImpl dequeue = new DequeueImpl();
+        dequeue.dequeImpl();
+
+        PriorityQueueImpl priorityQueue = new PriorityQueueImpl();
+        priorityQueue.priorityQueImpl();
     }
 }
