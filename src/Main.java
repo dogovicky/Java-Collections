@@ -1,10 +1,12 @@
 import collections.CollectionsDemo;
 import list.ArrayListImpl;
 import list.LinkedListImpl;
+import map.HashMapImpl;
+import map.LinkedHashMapImpl;
+import map.TreeMapImpl;
 import set.HashSetImpl;
 import set.LinkedHashSetImpl;
 import set.TreeSetImpl;
-
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
@@ -34,13 +36,22 @@ public class Main {
         // Set:  HashSet, LinkedHashSet and TreeSet
 
         HashSetImpl hashSet = new HashSetImpl();
-        hashSet.hashSetImpl();
+//        hashSet.hashSetImpl();
 
         LinkedHashSetImpl linkedHashSet = new LinkedHashSetImpl();
-        linkedHashSet.linkedHashSetImpl();
+//        linkedHashSet.linkedHashSetImpl();
 
         TreeSetImpl treeSet = new TreeSetImpl();
-        treeSet.treeSetImpl();
+//        treeSet.treeSetImpl();
 
+        // Map: HashMap, LinkedHashMap and TreeMap
+        HashMapImpl hashMap = new HashMapImpl();
+        hashMap.hashMapImpl();
+
+        LinkedHashMapImpl linkedHashMap = new LinkedHashMapImpl();
+        linkedHashMap.linkedHashMapImpl();
+
+        TreeMapImpl treeMap = new TreeMapImpl();
+        treeMap.treeMapImpl();
     }
 }
