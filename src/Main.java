@@ -10,6 +10,8 @@ import queue.PriorityQueueImpl;
 import set.HashSetImpl;
 import set.LinkedHashSetImpl;
 import set.TreeSetImpl;
+import stream_api.StreamAPI;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
@@ -58,12 +60,16 @@ public class Main {
 //        treeMap.treeMapImpl();
 
         LinkedListQueue listQueue = new LinkedListQueue();
-        listQueue.linkedListQueueImpl();
+//        listQueue.linkedListQueueImpl();
 
         DequeueImpl dequeue = new DequeueImpl();
-        dequeue.dequeImpl();
+//        dequeue.dequeImpl();
 
         PriorityQueueImpl priorityQueue = new PriorityQueueImpl();
-        priorityQueue.priorityQueImpl();
+//        priorityQueue.priorityQueImpl();
+
+        // Stream API
+        StreamAPI streamAPI = new StreamAPI();
+        streamAPI.streamApiImpl();
     }
 }
