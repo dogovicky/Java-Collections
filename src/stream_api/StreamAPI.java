@@ -31,7 +31,7 @@ import java.util.List;
 
 public class StreamAPI {
 
-    private class Student {
+    private static class Student {
         private String fullName;
         private boolean isClearedFees;
         private Character grade;
@@ -89,16 +89,18 @@ public class StreamAPI {
         // Task One: Implement stream api, return students whose fees have been cleared, sort the grades in ascending order
         List<Student> clearedFees = students.stream()
                 .filter(s -> s.isClearedFees)
+                .sorted(Comparator.comparing(Student::getGrade))
                 .toList();
 
+        System.out.println("Students with cleared fees: ");
         for (Student student : clearedFees) {
-            System.out.println(student + "\n");
+            System.out.println(student);
         }
 
         // Task two: Return students who will be listed for graduation. A student can only proceed if they have a grade 'A', 'B', and 'C' and has cleared fees
         List<Student> bonafiedStudents = students
                 .stream()
-                .filter(s -> s.isClearedFees && s.grade == 'A' || s.grade == 'B' || s.grade == 'C')
+                .filter(s -> s.isClearedFees && (s.grade == 'A' || s.grade == 'B' || s.grade == 'C'))
                 .toList();
 
         /**
@@ -107,13 +109,61 @@ public class StreamAPI {
          * Student Four
          * Student Nine
          */
-
+        System.out.println("\n Students who will be listed for graduation: ");
         for (Student student : bonafiedStudents) {
             System.out.println(student);
         }
 
 
+        // Task three: Return students who have cleared fees but aren't advancing to graduate
+        List<Student> nonBonafiedStudentsWithClearedFees = students
+                .stream()
+                .filter(s -> s.isClearedFees && s.grade == 'D' || s.grade == 'E')
+                .sorted(Comparator.comparing(Student::getGrade))
+                .toList();
 
+        System.out.println("\n");
+        for (Student student : nonBonafiedStudentsWithClearedFees) {
+            System.out.println("\n");
+            System.out.println(student);
+        }
+
+        /**
+         * Expected output:
+         * Student Two
+         * Student Six
+         * Student Ten
+         */
+
+        List<Student> nonBonafiedStudentsWithArrears = students.stream()
+                .filter(s -> !s.isClearedFees && s.grade == 'D' || !s.isClearedFees && s.grade == 'E')
+                .toList();
+
+        for (Student student : nonBonafiedStudentsWithArrears) {
+            System.out.println("Non Bonafied Students With Arrears");
+            System.out.println(student);
+        }
+
+        /**
+         * Expected output
+         * Student Five
+         * Student Seven
+         */
+
+        List<Student> bonafiedStudentsWithArrears = students.stream()
+                .filter(s -> !s.isClearedFees && s.grade == 'A' || !s.isClearedFees && s.grade == 'B' || !s.isClearedFees && s.grade == 'C')
+                .toList();
+
+        System.out.println("\n Bonafied students with arrears");
+        for (Student student : bonafiedStudentsWithArrears) {
+            System.out.println(student);
+        }
+
+        /**
+         * Expected output
+         * Student  Three
+         * Student Eight
+         */
     }
 
 }
